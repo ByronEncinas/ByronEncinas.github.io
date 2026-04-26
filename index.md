@@ -3,9 +3,7 @@ layout: default
 title: Home
 ---
 
-# Welcome to My Blog
-
-This is the home page of my personal blog built with Jekyll and GitHub Pages.
+# I wanted a space to present my work, and so here it is!!!
 
 ## Latest Posts
 
