@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Byron Encinas Blog</title>
+    <title>Byron J. Encinas-Velazquez</title>
     <style>
         :root {
             --bg-color: #ffffff;
@@ -9,13 +9,19 @@
             --toc-bg: #f9f9f9;
             --toc-border: #cccccc;
             --link-color: #333333;
+            --link-hover: #000000;
+            --button-bg: #f9f9f9;
+            --button-border: #cccccc;
         }
         [data-theme="dark"] {
-            --bg-color: #121212;
-            --text-color: #ffffff;
-            --toc-bg: #1e1e1e;
-            --toc-border: #333333;
-            --link-color: #ffffff;
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --toc-bg: #2a2a2a;
+            --toc-border: #444444;
+            --link-color: #87ceeb;
+            --link-hover: #add8e6;
+            --button-bg: #2a2a2a;
+            --button-border: #444444;
         }
         body {
             background-color: var(--bg-color);
@@ -43,16 +49,33 @@
         }
         #toc a:hover {
             text-decoration: underline;
+            color: var(--link-hover);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         main {
             max-width: 800px;
+            margin: 0 auto;
+        }
+        main.has-toc {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        main.has-toc #toc {
+            float: none;
+            width: 200px;
+            flex-shrink: 0;
         }
         #theme-toggle {
             position: absolute;
             top: 10px;
             right: 10px;
-            background: none;
-            border: 1px solid var(--text-color);
+            background: var(--button-bg);
+            border: 1px solid var(--button-border);
             color: var(--text-color);
             padding: 5px 10px;
             cursor: pointer;
@@ -64,17 +87,18 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Byron Encinas Blog</h1>
-        <button id="theme-toggle">Toggle Dark Mode</button>
-    </header>
-    <main>
-        
-        <div id="toc">
-            <h3>Table of Contents</h3>
-        </div>
-        
-        <h1 id="hello-world">Hello World</h1>
+    <div class="container">
+        <header>
+            <h1>Byron J. Encinas-Velazquez</h1>
+            <button id="theme-toggle">Toggle Dark Mode</button>
+        </header>
+        <main class="has-toc">
+            
+            <div id="toc">
+                <h3>Table of Contents</h3>
+            </div>
+            
+            <h1 id="hello-world">Hello World</h1>
 
 <p>This is my first blog post! Welcome to my personal blog where I’ll share thoughts, tutorials, and more.</p>
 
@@ -96,7 +120,8 @@
 
 <p>Stay tuned for more content!</p>
 
-    </main>
+        </main>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const headings = document.querySelectorAll('h2, h3, h4');
