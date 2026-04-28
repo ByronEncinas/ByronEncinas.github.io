@@ -3,7 +3,9 @@
 <head>
     <title>Byron J. Encinas-Velazquez</title>
     <style>
+        /* CSS Variables for theming */
         :root {
+            /* Light theme colors */
             --bg-color: #ffffff;
             --text-color: #333333;
             --toc-bg: #f9f9f9;
@@ -14,6 +16,7 @@
             --button-border: #cccccc;
         }
         [data-theme="dark"] {
+            /* Dark theme colors - softer for eye comfort */
             --bg-color: #1a1a1a;
             --text-color: #e0e0e0;
             --toc-bg: #2a2a2a;
@@ -23,11 +26,13 @@
             --button-bg: #2a2a2a;
             --button-border: #444444;
         }
+        /* Body styling with theme variables */
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
         }
+        /* Table of Contents styling */
         #toc {
             float: right;
             width: 200px;
@@ -51,25 +56,28 @@
             text-decoration: underline;
             color: var(--link-hover);
         }
+        /* Centered container for all page content */
         .container {
-            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+        /* Main content area - centered within container */
         main {
             max-width: 800px;
             margin: 0 auto;
         }
+        /* One-column layout for posts - full width with container padding */
         main.has-toc {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
+            max-width: none;
+            margin: 0;
         }
+        /* One-column layout for posts with TOC below content */
         main.has-toc #toc {
             float: none;
-            width: 200px;
-            flex-shrink: 0;
+            width: auto;
+            margin-top: 20px;
         }
+        /* Dark mode toggle button */
         #theme-toggle {
             position: absolute;
             top: 10px;
@@ -87,17 +95,14 @@
     </style>
 </head>
 <body>
+    <!-- Centered container for page layout -->
     <div class="container">
         <header>
             <h1>Byron J. Encinas-Velazquez</h1>
             <button id="theme-toggle">Toggle Dark Mode</button>
         </header>
+        <!-- Main content area, with TOC class for posts -->
         <main class="has-toc">
-            
-            <div id="toc">
-                <h3>Table of Contents</h3>
-            </div>
-            
             <h1 id="hello-world">Hello World</h1>
 
 <p>This is my first blog post! Welcome to my personal blog where I’ll share thoughts, tutorials, and more.</p>
@@ -120,9 +125,16 @@
 
 <p>Stay tuned for more content!</p>
 
+            
+            <!-- Table of Contents below content for one-column layout -->
+            <div id="toc">
+                <h3>Table of Contents</h3>
+            </div>
+            
         </main>
     </div>
     <script>
+        // Generate Table of Contents for blog posts
         document.addEventListener('DOMContentLoaded', function() {
             const headings = document.querySelectorAll('h2, h3, h4');
             if (headings.length > 0) {
@@ -131,30 +143,34 @@
                 headings.forEach(h => {
                     const li = document.createElement('li');
                     const a = document.createElement('a');
+                    // Create anchor ID from heading text
                     const id = h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
                     h.id = id;
                     a.href = '#' + id;
                     a.textContent = h.textContent;
+                    // Indent subheadings
                     li.style.marginLeft = (h.tagName === 'H3' ? '20px' : h.tagName === 'H4' ? '40px' : '0');
                     li.appendChild(a);
                     ul.appendChild(li);
                 });
                 toc.appendChild(ul);
             } else {
+                // Hide TOC if no headings
                 document.getElementById('toc').style.display = 'none';
             }
         });
 
-        // Dark mode toggle
+        // Dark mode toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
 
-        // Load saved theme
+        // Load saved theme preference
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             body.setAttribute('data-theme', savedTheme);
         }
 
+        // Toggle theme on button click
         themeToggle.addEventListener('click', () => {
             const currentTheme = body.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
