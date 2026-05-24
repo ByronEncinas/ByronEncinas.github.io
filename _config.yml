@@ -1,3 +1,9 @@
 title: "Byron J. Encinas-Velazquez"
 description: "Stuff"
 url: "https://byronencinas.github.io"
+# Enable kramdown and math support for LaTeX in Markdown
+markdown: kramdown
+kramdown:
+	input: GFM
+	math_engine: mathjax
+	math_engine_opts: {}

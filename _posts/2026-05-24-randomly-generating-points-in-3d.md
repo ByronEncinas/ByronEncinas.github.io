@@ -159,6 +159,18 @@ The **two-tailed p-values** for the Z-scores are:
 
 Since p-value is greater than $\alpha$, then we don't have enough statistical to reject the null hypothesis.
 
+---
+
+# Math Test
+
+Inline math example: $e^{i\pi} + 1 = 0$.
+
+Display math example:
+
+$$
+\int_0^1 x^2 \,dx = \frac{1}{3}
+$$
+
 # This post...
 
 was made from a note I made and develope in obsidian because for some reason, it didn't sit right with me the procedure to generate uniform random points inside a sphere. Now I know how to do it, which is nice.
