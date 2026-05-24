@@ -8,3 +8,5 @@ Recently, I gained back the interest to continue (this is something that happens
 
 `kilo` tutorial does basicly everything by hand. I don't care enough to re-invent the wheel, I'd rather focus on how the editor will be used, what kind of features will it have. right now I am working on this part, as easy as it may sound Im not married to this project and will probably procrastinate until its finished somewhere in the year three thousand.
 
+> [!NOTE]
+> This Post is under construction, sorry
