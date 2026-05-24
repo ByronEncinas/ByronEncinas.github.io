@@ -26,99 +26,191 @@
             --button-bg: #2a2a2a;
             --button-border: #444444;
         }
-        /* Body styling with theme variables */
+        /* Base page layout for a Tufte-style reading experience */
         body {
+            margin: 0;
+            min-height: 100vh;
+            line-height: 1.7;
+            font-family: Georgia, 'Times New Roman', serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
         }
-        /* Table of Contents styling */
-        #toc {
-            float: right;
-            width: 200px;
-            margin-left: 20px;
-            padding: 10px;
-            border: 1px solid var(--toc-border);
-            background: var(--toc-bg);
-        }
-        #toc ul {
-            list-style: none;
-            padding: 0;
-        }
-        #toc li {
-            margin: 5px 0;
-        }
-        #toc a {
-            text-decoration: none;
-            color: var(--link-color);
-        }
-        #toc a:hover {
-            text-decoration: underline;
-            color: var(--link-hover);
-        }
-        /* Centered container for all page content */
-        .container {
+
+        .page-shell {
+            display: grid;
+            grid-template-columns: minmax(220px, 260px) minmax(44rem, 1fr) minmax(220px, 280px);
+            gap: 2rem;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 1.5rem 2rem;
+            align-items: start;
         }
-        /* Main content area - centered within container */
-        main {
-            max-width: 800px;
-            margin: 0 auto;
+
+        .sidebar,
+        .notes {
+            position: sticky;
+            top: 1.5rem;
+            align-self: start;
         }
-        /* One-column layout for posts - full width with container padding */
-        main.has-toc {
-            max-width: none;
-            margin: 0;
+
+        .sidebar {
+            padding-right: 1rem;
         }
-        /* One-column layout for posts with TOC below content */
-        main.has-toc #toc {
-            float: none;
-            width: auto;
-            margin-top: 20px;
+
+        .sidebar h1 {
+            margin: 0 0 1rem;
+            font-size: 1.7rem;
         }
-        /* Dark mode toggle button */
-        #theme-toggle {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--button-bg);
-            border: 1px solid var(--button-border);
-            color: var(--text-color);
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        #theme-toggle:hover {
-            background: var(--toc-bg);
-        }
-        /* Navigation menu styling */
+
         nav ul {
             list-style: none;
             padding: 0;
-            margin: 10px 0;
+            margin: 0;
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 0.8rem;
         }
-        nav li {
-            display: inline;
-        }
+
         nav a {
+            display: inline-block;
             text-decoration: none;
             color: var(--link-color);
-            padding: 5px 10px;
+            padding: 0.35rem 0.5rem;
             border-radius: 5px;
         }
+
         nav a:hover {
             background: var(--toc-bg);
             color: var(--link-hover);
         }
+
+        main {
+            max-width: 44rem;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .notes {
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .notes-panel {
+            border: 1px solid var(--toc-border);
+            background: var(--toc-bg);
+            padding: 1.15rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .notes-panel h3 {
+            margin-top: 0;
+            margin-bottom: 0.85rem;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .notes-panel p,
+        .notes-panel ul,
+        #toc ul {
+            margin: 0.5rem 0 0;
+        }
+
+        .notes-panel li,
+        #toc li {
+            margin: 0.45rem 0;
+        }
+
+        .notes-panel .note-item {
+            border-left: 3px solid var(--link-color);
+            padding-left: 0.8rem;
+            margin-bottom: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .notes-panel em,
+        .notes-panel strong {
+            color: var(--text-color);
+        }
+
+        #toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #toc li {
+            margin: 0.5rem 0;
+        }
+
+        #toc a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        #toc a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+
+        #theme-toggle {
+            display: inline-block;
+            margin-top: 1rem;
+            background: var(--button-bg);
+            border: 1px solid var(--button-border);
+            color: var(--text-color);
+            padding: 0.5rem 0.85rem;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        #theme-toggle:hover {
+            background: var(--toc-bg);
+        }
+
+        @media (max-width: 1200px) {
+            .page-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar,
+            .notes {
+                position: static;
+                max-width: 100%;
+            }
+
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .notes {
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .page-shell {
+                padding: 1rem;
+            }
+
+            main {
+                max-width: 100%;
+            }
+
+            nav a {
+                padding: 0.4rem 0.6rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Centered container for page layout -->
-    <div class="container">
-        <header>
+    <div class="page-shell">
+        <aside class="sidebar">
             <h1>{{ site.title }}</h1>
             <nav>
                 <ul>
@@ -130,42 +222,48 @@
                 </ul>
             </nav>
             <button id="theme-toggle">Toggle Dark Mode</button>
-        </header>
-        <!-- Main content area, with TOC class for posts -->
-        <main{% if page.path contains '_posts' %} class="has-toc"{% endif %}>
+        </aside>
+        <main>
             {{ content }}
-            {% if page.path contains '_posts' %}
-            <!-- Table of Contents below content for one-column layout -->
-            <div id="toc">
-                <h3>Table of Contents</h3>
-            </div>
-            {% endif %}
         </main>
+        <aside class="notes">
+            <div class="notes-panel">
+                {% if page.notes %}
+                    <h3>Notes</h3>
+                    {{ page.notes | markdownify }}
+                {% else %}
+                    <div id="toc">
+                        <h3>Notes</h3>
+                    </div>
+                {% endif %}
+            </div>
+        </aside>
     </div>
     <script>
         // Generate Table of Contents for blog posts
         document.addEventListener('DOMContentLoaded', function() {
+            const toc = document.getElementById('toc');
+            if (!toc) {
+                return;
+            }
+
             const headings = document.querySelectorAll('h2, h3, h4');
             if (headings.length > 0) {
-                const toc = document.getElementById('toc');
                 const ul = document.createElement('ul');
                 headings.forEach(h => {
                     const li = document.createElement('li');
                     const a = document.createElement('a');
-                    // Create anchor ID from heading text
                     const id = h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
                     h.id = id;
                     a.href = '#' + id;
                     a.textContent = h.textContent;
-                    // Indent subheadings
                     li.style.marginLeft = (h.tagName === 'H3' ? '20px' : h.tagName === 'H4' ? '40px' : '0');
                     li.appendChild(a);
                     ul.appendChild(li);
                 });
                 toc.appendChild(ul);
             } else {
-                // Hide TOC if no headings
-                document.getElementById('toc').style.display = 'none';
+                toc.style.display = 'none';
             }
         });
 
