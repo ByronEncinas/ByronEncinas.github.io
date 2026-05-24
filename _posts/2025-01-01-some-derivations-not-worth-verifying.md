@@ -5,144 +5,139 @@ date: 2025-01-01
 ---
 
 Deriving equations and CR transport theory from Silsbee & Ivlev 2018.
-
 ## The Continuity Equation
 
-\begin{equation}\label{ContinuityEqtn}
+
+$$
+\begin{equation}
     \frac{\partial f}{\partial t} + \frac{\partial }{\partial \mu}(f\dot{\mu}) + \frac{\partial }{\partial s}(f\dot{s})= 0
-\end{equation}
-
+\end{equation}$$
 \noindent
-
 This equation describes the conservation of the distribution function $f(\mu, s, t)$ in a 2D phase space, where $\mu$ is the cosine of the pitch angle and $s$ is the position along the magnetic field line. If we assume that $f$ is the steady state solution for the phase space distribution, then we have $\frac{\partial f}{\partial t} = 0$ and expand, which simplifies \eqref{ContinuityEqtn} to:
-\begin{equation}\label{ExpandedContinuityEqtn}
+$$
+\begin{equation}
     \dot{\mu}\frac{\partial f}{\partial \mu} + f\frac{\partial \dot{\mu}}{\partial \mu}+ \dot{s}\frac{\partial f}{\partial s} + f\frac{\partial \dot{s}}{\partial s} = 0 \hspace{8mm} (\text{Expand derivatives of products})
 \end{equation}
+$$
 
 \noindent
 we further simplified by the relation $\dot{s} = v\cos(\alpha) = v\mu$ representing the parallel velocity component. Similarly, conservation of the magnetic moment, allows to find an expression for $\dot{\mu}$.
+$$
 \begin{align}
 \frac{d}{ds}\left( \frac{1-\mu^2}{B(s)}\right) = 0&  \hspace{8mm} (\text{Conservation of magnetic moment yields})\\
 \frac{\partial \mu}{\partial s}= -\frac{(1-\mu^2)}{2 \mu B} \frac{\partial B}{\partial s}& \hspace{8mm} (\text{Simplifying}) \\
-    \dot{\mu}  = \frac{\partial \mu}{\partial s} \dot{s} = -v(1-\mu^2)\frac{\partial \ln(\sqrt{B})}{\partial s}& \hspace{8mm} (\text{Computing time derivative with chain rule}) \\
+    \dot{\mu}  = \frac{\partial \mu}{\partial s} \dot{s} = -v(1-\mu^2)\frac{\partial \ln(\sqrt{B})}{\partial s}& \hspace{8mm} (\text{Computing time derivative with chain rule}) \\ 
     \frac{\partial \dot{\mu}}{\partial \mu} = 2v\mu \frac{\partial \ln(\sqrt{B})}{\partial s}
 & \hspace{8mm} (\text{And the derivative with respect to $\mu$})
 \end{align}
+$$
 
 \noindent
 Substituting in \eqref{ExpandedContinuityEqtn}, we get
 
+$$
 \begin{align*}
 v\mu \frac{\partial f}{\partial s} + f \left( -v \frac{(1-\mu^2)}{\mu} \frac{\partial \ln(\sqrt{B})}{\partial s} \right)
 + \left( -v(1-\mu^2)\frac{\partial \ln(\sqrt{B})}{\partial s} \right) \frac{\partial f}{\partial \mu} + f \left( 2v\mu \frac{\partial \ln(\sqrt{B})}{\partial s} \right) = 0
 \end{align*}
-
+$$
 \noindent
 Rearranging and grouping terms:
+$$
 \begin{align*}
 v\mu \frac{\partial f}{\partial s} - v(1-\mu^2)\frac{\partial \ln(\sqrt{B})}{\partial s}\frac{\partial f}{\partial \mu}+ vf \frac{\partial \ln(\sqrt{B})}{\partial s} \left[ -\frac{(1-\mu^2)}{\mu} + 2\mu \right] = 0
 \end{align*}
-
+$$
 \noindent
 The bracketed term simplifies to
-\begin{equation*}
+$$\begin{equation*}
 \frac{-(1-\mu^2) + 2\mu^2}{\mu} = \frac{-1+\mu^2+2\mu^2}{\mu} = \frac{3\mu^2-1}{\mu}  
 \end{equation*}
-
+$$
 \noindent
 So we obtain:
-\begin{equation}
+$$\begin{equation}
 v\mu \frac{\partial f}{\partial s} - v(1-\mu^2)\frac{\partial \ln(\sqrt{B})}{\partial s}\frac{\partial f}{\partial \mu} + vf \frac{\partial \ln(\sqrt{B})}{\partial s} \left( \frac{3\mu^2 - 1}{\mu} \right) = 0 
 \end{equation}
-
+$$
 \noindent
 To account for the focusing term, we define a new distribution function $g = Bf$. And express the derivatives of $f$ in terms of $g$:
-\begin{align*}
+$$\begin{align*}
 \frac{\partial f}{\partial s} &= \frac{\partial}{\partial s}\left(\frac{g}{B}\right) = \frac{1}{B}\frac{\partial g}{\partial s} - \frac{g}{B^2}\frac{\partial B}{\partial s} \\
 \frac{\partial f}{\partial \mu} &= \frac{\partial}{\partial \mu}\left(\frac{g}{B}\right) = \frac{1}{B}\frac{\partial g}{\partial \mu}
 \end{align*}
-
+$$
 Substitute and multiply the entire equation by $B/v$:
-\begin{align*}
+$$\begin{align*}
 \mu \left( \frac{\partial g}{\partial s} - \frac{g}{B}\frac{\partial B}{\partial s} \right) - (1-\mu^2)\frac{\partial \ln(\sqrt{B})}{\partial s}\frac{\partial g}{\partial \mu}+ g \frac{\partial \ln(\sqrt{B})}{\partial s} \left( \frac{3\mu^2 - 1}{\mu} \right) = 0
 \end{align*}
-
-\noindent
+$$\noindent
 Recall that $\frac{\partial \ln(\sqrt{B})}{\partial s} =\frac{1}{2B}\frac{\partial B}{\partial s}$. Substituting this:
-\begin{align*}
+$$\begin{align*}
 \mu \frac{\partial g}{\partial s} - \mu g \left( 2\frac{\partial \ln(\sqrt{B})}{\partial s} \right) - (1-\mu^2)\frac{\partial \ln(\sqrt{B})}{\partial s}\frac{\partial g}{\partial \mu}+ g \frac{\partial \ln(\sqrt{B})}{\partial s} \left( \frac{3\mu^2 - 1}{\mu} \right) = 0
 \end{align*}
-
-\noindent
+$$\noindent
 Group terms with $\frac{\partial \ln(\sqrt{B})}{\partial s}$:
-\begin{equation*}
+$$
 \mu \frac{\partial g}{\partial s} - \frac{\partial \ln(\sqrt{B})}{\partial s} \left[ 2\mu g + (1-\mu^2)\frac{\partial g}{\partial \mu} - g \frac{3\mu^2 - 1}{\mu} \right] = 0
-\end{equation*}
-
+$$
 \noindent
 Again the bracketed term simplifies to:
-
-\begin{align}
+$$\begin{align*}
 2\mu g - g \frac{3\mu^2 - 1}{\mu} + (1-\mu^2)\frac{\partial g}{\partial \mu} &= g \left( 2\mu - \frac{3\mu^2 - 1}{\mu} \right) + (1-\mu^2)\frac{\partial g}{\partial \mu} \\
 &= g \left( \frac{2\mu^2 - 3\mu^2 + 1}{\mu} \right) + (1-\mu^2)\frac{\partial g}{\partial \mu} \\
 &= g \left( \frac{1 - \mu^2}{\mu} \right) + (1-\mu^2)\frac{\partial g}{\partial \mu} \\
 &= (1-\mu^2) \left( \frac{g}{\mu} + \frac{\partial g}{\partial \mu} \right) \\
 &= (1-\mu^2) \frac{1}{\mu} \left( g + \mu \frac{\partial g}{\partial \mu} \right) \\
 &= (1-\mu^2) \frac{1}{\mu} \frac{\partial (\mu g)}{\partial \mu}
-\end{align}
-
+\end{align*}
+$$
 \noindent
 the differential equation for $g$ is:
-\begin{equation*}
+$$\begin{equation*}
 \mu^2 \frac{\partial g}{\partial s} - \frac{\partial \ln(\sqrt{B})}{\partial s} (1-\mu^2)  \frac{\partial (\mu g)}{\partial \mu} = 0
 \end{equation*}
-
-\noindent
+$$\noindent
 Let's now substitute $\psi = \mu g$ into the equation for $g$. And we note, that we are working on phase space, such that partial derivatives between phase space coordinates are taken considering other coordinates constant. In Thermodynamics this is made obvious by using the notation $\left(\frac{\partial U}{\partial T} \right)_{N,P}$, which means \textit{the partial derivative of the internal energy, holding $N, P$ as constants},
-\begin{equation*}
-    \mu \frac{\partial g}{\partial s} = 
-    \mu \frac{\partial}{\partial s}\left(\frac{\psi}{\mu}\right) = 
-    \mu \left( \frac{1}{\mu} \frac{\partial \psi}{\partial s} \right) = 
-    \frac{\partial \psi}{\partial s}
-\end{equation*}
+$$    \mu \frac{\partial g}{\partial s} = \mu \frac{\partial}{\partial s}\left(\frac{\psi}{\mu}\right) = \mu \left( \frac{1}{\mu} \frac{\partial \psi}{\partial s} \right) = \frac{\partial \psi}{\partial s}
+  $$
 Substituting these into the equation for $g$:
-\begin{equation}
+$$\begin{equation}
 \mu\frac{\partial \psi}{\partial s} - \frac{\partial \ln(\sqrt{B})}{\partial s}(1-\mu^2)  \frac{\partial \psi}{\partial \mu} = 0
 \end{equation}
-
+$$
 Such that $\psi$ is related to the phase space distribution function by the expression $f = B\mu \psi(s,\mu)$. The resulting equation, renaming the unknown function $\psi$ back to $f$ is:
-\begin{equation}
+$$\begin{equation}
 \mu\frac{\partial f}{\partial s} - \frac{\partial \ln(\sqrt{B})}{\partial s}(1-\mu^2)  \frac{\partial f}{\partial \mu} = 0
 \end{equation}
-
-This differential equation does not account for energy losses by interactions with matter (The nature of this interactions will be discussed in further sections). This can be accounted by adding up a term in the continuity equation involving the energy.
-\begin{equation}
+$$This differential equation does not account for energy losses by interactions with matter (The nature of this interactions will be discussed in further sections). This can be accounted by adding up a term in the continuity equation involving the energy.
+$$\begin{equation}
 v\mu\frac{\partial f}{\partial s} - v\frac{\partial \ln(\sqrt{B})}{\partial s}(1-\mu^2)  \frac{\partial f}{\partial \mu} + \frac{\partial }{\partial p} (f \dot{p})= 0
 \end{equation}
-Substituing $j(\mu,s,E) = v(E) f(\mu,s,E)$, in which the relation between momentum and energy is given by $dE = v dp$, and $\dot{p} = -n_g(s)L(E)$
+$$Substituing $j(\mu,s,E) = v(E) f(\mu,s,E)$, in which the relation between momentum and energy is given by $dE = v dp$, and $\dot{p} = -n_g(s)L(E)$
 
-\begin{equation}
+$$\begin{equation}
 \mu\frac{\partial j}{\partial s} - \frac{\partial \ln(\sqrt{B})}{\partial s}(1-\mu^2)  \frac{\partial j}{\partial \mu}  -n_g \frac{\partial }{\partial E} (jL)= 0
 \end{equation}
-
+$$
 Somehow this can be simplified to the following
 
-\begin{equation}\label{fluxequation}
+$$\begin{equation}
 \frac{\hat{\mu}}{n_g}\frac{\partial j}{\partial s} - \frac{\partial }{\partial E} (jL)= 0
 \end{equation}
-
+$$
 or by the relation $\partial N = n_g\partial s$,
-\begin{equation*}
+$$\begin{equation*}
 \hat{\mu}\frac{\partial j}{\partial N} - \frac{\partial }{\partial E} (jL)= 0
 \end{equation*}
-
-It must be pointed, that equation \eqref{fluxequation} can be used as long as no substantial energy losses occur as a result of scattering of CRs. This is, as long as the diffusion term in the equations remains negligible\cite{Morfill1976}. Energy losses are a result of small instant reductions caused by individual collisions with gas particles, subsequently causing the Larmor radius to decrease. 
+$$It must be pointed, that equation \eqref{fluxequation} can be used as long as no substantial energy losses occur as a result of scattering of CRs. This is, as long as the diffusion term in the equations remains negligible\cite{Morfill1976}. Energy losses are a result of small instant reductions caused by individual collisions with gas particles, subsequently causing the Larmor radius to decrease. 
 \noindent
 We also point out that the relation between $j(\mu,s,E)$ and the number of particles per unit volume and unit energy is,
+$$
 \begin{equation}
     \mathcal{N}(E,s) = \frac{4\pi}{v}j(E,s,\mu)
 \end{equation}
-
+$$
 This note explores magnetic focusing and mirroring, two effects crucial to understanding cosmic ray propagation in molecular clouds. These effects are mathematically described, highlighting how they can counteract each other.
 
 ---
@@ -157,7 +152,7 @@ We begin with the assumption that the distribution of cosmic rays (CRs) is initi
 The figure below illustrates a flux tube bounded by cross-sectional areas $A_1$ and $A_2$, through which cosmic rays travel along magnetic field lines. Since cosmic rays are charged particles, their motion is constrained to follow the magnetic field lines. Where the magnetic field is stronger, the density of field lines is higher, and therefore more CRs are guided into those regions. This gives rise to magnetic focusing, which leads to:
 
 $$
- n(s) \propto B(s),
+n(s) \propto B(s),
 $$
 
 where $n(s)$ is the local number density of CRs and $B(s)$ is the magnetic field strength at position $s$.
@@ -195,36 +190,36 @@ $$
 Solving for $n(s)$ gives:
 
 $$
- n(s) = \frac{n_i \mu_i B(s)}{B_i \mu(s)}.
+n(s) = \frac{n_i \mu_i B(s)}{B_i \mu(s)}.
 $$
 
 To connect this with the distribution function $f(\mu, s)$, we recall that the number density is the integral of the distribution over all pitch angles (from $-1 <\mu <1$, since those values account for the pitch angles from $ 0 <\alpha<\pi/2$):
 
 $$
- n(s) = \int_{-1}^{1} f(\mu, s) \, d\mu.
+n(s) = \int_{-1}^{1} f(\mu, s) \, d\mu.
 $$
 
 Due to Liouville’s theorem, this is conserved along trajectories, so:
 
 $$
- n_i = \int_{-1}^{1} f(\mu_i)\, d\mu_i.
+n_i = \int_{-1}^{1} f(\mu_i)\, d\mu_i.
 $$
 If the source distribution is isotropic, then $f(\mu_i) = \text{const}.$ Let $ f(\mu_i) = C$, where $C$ is a constant. Then, we can solve the integral explicitly:
 $$
- n_i = \int_{-1}^{1} C\, d\mu_i
+n_i = \int_{-1}^{1} C\, d\mu_i
 $$
 $$
- n_i = C [\mu_i]_{-1}^{1}
+n_i = C [\mu_i]_{-1}^{1}
 $$
 $$
- n_i = C (1 - (-1))
+n_i = C (1 - (-1))
 $$
 $$
- n_i = 2C
+n_i = 2C
 $$
 Therefore, solving for $C$, we find:
 $$
- f(\mu_i) = C = \frac{n_i}{2}
+f(\mu_i) = C = \frac{n_i}{2}
 $$
 ## Mirroring and Adiabatic Invariants
 
@@ -249,8 +244,7 @@ This relationship is a direct consequence of the conservation of the magnetic mo
 $$
 \begin{equation}
     J = \oint p_{\perp} \, dl_{\perp}
-\end{equation}
-$$
+\end{equation}$$
 where $dl_{\perp}$ is an element of length along the perpendicular circular orbit. For a circular orbit, $dl_{\perp} = r_L d\theta$. since the radius, $r_L = \frac{mv_\perp}{|q|B}$, we get for the action to be
 $$
 J = \oint  (mv_\perp)\frac{mv_\perp}{|q|B} d\theta = 2\pi\frac{m^2v^2_\perp}{|q|B}
