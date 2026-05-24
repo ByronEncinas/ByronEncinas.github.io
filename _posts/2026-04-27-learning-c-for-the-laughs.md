@@ -8,8 +8,8 @@ But my experience with python and fortran showed my that learning a language is 
 
 # Doing a FEM solver with friends!
 
-> ![NOTE]
-> Doing this kind of project with friends is not as fun as it looks. It is worth it, but it has its ugly parts.
+    Doing this kind of project with friends is not as fun as it looks. It is worth it, but it has its ugly parts.
+            -- Me, now
 
 Reading through FEM books that use notations that obfuscate the methods is the easy part, design is quite hard. I tried to direct the project in a `procedural` way. Each functions does a job and each job fulfills a function. But it is not so like that. I wanted the code to be optmized in a lot of very stupid ways, but I commited the error of writing first, designing later. This was in fact, a critical mistake.
 
