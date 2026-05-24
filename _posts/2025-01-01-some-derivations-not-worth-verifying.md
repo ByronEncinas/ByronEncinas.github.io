@@ -11,7 +11,9 @@ Deriving equations and CR transport theory from Silsbee & Ivlev 2018.
 \begin{equation}\label{ContinuityEqtn}
     \frac{\partial f}{\partial t} + \frac{\partial }{\partial \mu}(f\dot{\mu}) + \frac{\partial }{\partial s}(f\dot{s})= 0
 \end{equation}
+
 \noindent
+
 This equation describes the conservation of the distribution function $f(\mu, s, t)$ in a 2D phase space, where $\mu$ is the cosine of the pitch angle and $s$ is the position along the magnetic field line. If we assume that $f$ is the steady state solution for the phase space distribution, then we have $\frac{\partial f}{\partial t} = 0$ and expand, which simplifies \eqref{ContinuityEqtn} to:
 \begin{equation}\label{ExpandedContinuityEqtn}
     \dot{\mu}\frac{\partial f}{\partial \mu} + f\frac{\partial \dot{\mu}}{\partial \mu}+ \dot{s}\frac{\partial f}{\partial s} + f\frac{\partial \dot{s}}{\partial s} = 0 \hspace{8mm} (\text{Expand derivatives of products})
@@ -79,14 +81,15 @@ Group terms with $\frac{\partial \ln(\sqrt{B})}{\partial s}$:
 
 \noindent
 Again the bracketed term simplifies to:
-\begin{align*}
+
+\begin{align}
 2\mu g - g \frac{3\mu^2 - 1}{\mu} + (1-\mu^2)\frac{\partial g}{\partial \mu} &= g \left( 2\mu - \frac{3\mu^2 - 1}{\mu} \right) + (1-\mu^2)\frac{\partial g}{\partial \mu} \\
 &= g \left( \frac{2\mu^2 - 3\mu^2 + 1}{\mu} \right) + (1-\mu^2)\frac{\partial g}{\partial \mu} \\
 &= g \left( \frac{1 - \mu^2}{\mu} \right) + (1-\mu^2)\frac{\partial g}{\partial \mu} \\
 &= (1-\mu^2) \left( \frac{g}{\mu} + \frac{\partial g}{\partial \mu} \right) \\
 &= (1-\mu^2) \frac{1}{\mu} \left( g + \mu \frac{\partial g}{\partial \mu} \right) \\
 &= (1-\mu^2) \frac{1}{\mu} \frac{\partial (\mu g)}{\partial \mu}
-\end{align*}
+\end{align}
 
 \noindent
 the differential equation for $g$ is:
