@@ -1,9 +1,6 @@
 ---
 layout: default
 title: Making a Text Editor
-notes:
-  - This Post is under construction, sorry
-  - I’m planning to add raw mode and movement keys next.
 ---
 
 # Making a Text Editor
