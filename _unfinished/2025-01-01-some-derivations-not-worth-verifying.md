@@ -9,11 +9,12 @@ date: 2025-01-01
 $$
 \begin{equation}
     \frac{\partial f}{\partial t} + \frac{\partial }{\partial \mu}(f\dot{\mu}) + \frac{\partial }{\partial s}(f\dot{s})= 0
+    
 \end{equation}
 $$
 
-\noindent
-This equation describes the conservation of the distribution function $f(\mu, s, t)$ in a 2D phase space, where $\mu$ is the cosine of the pitch angle and $s$ is the position along the magnetic field line. If we assume that $f$ is the steady state solution for the phase space distribution, then we have $\frac{\partial f}{\partial t} = 0$ and expand, which simplifies \eqref{ContinuityEqtn} to:
+ 
+This equation describes the conservation of the distribution function $f(\mu, s, t)$ in a 2D phase space, where $\mu$ is the cosine of the pitch angle and $s$ is the position along the magnetic field line. If we assume that $f$ is the steady state solution for the phase space distribution, then we have $\frac{\partial f}{\partial t} = 0$ and expand, which simplifies to:
 
 $$
 \begin{equation}
@@ -21,7 +22,7 @@ $$
 \end{equation}
 $$
 
-\noindent
+
 we further simplified by the relation $\dot{s} = v\cos(\alpha) = v\mu$ representing the parallel velocity component. Similarly, conservation of the magnetic moment, allows to find an expression for $\dot{\mu}$.
 
 $$
@@ -34,8 +35,8 @@ $$
 \end{align}
 $$
 
-\noindent
-Substituting in \eqref{ExpandedContinuityEqtn}, we get
+ 
+Substituting, we get
 
 $$
 \begin{align*}
@@ -44,7 +45,7 @@ v\mu \frac{\partial f}{\partial s} + f \left( -v \frac{(1-\mu^2)}{\mu} \frac{\pa
 \end{align*}
 $$
 
-\noindent
+ 
 Rearranging and grouping terms:
 
 $$
@@ -53,7 +54,7 @@ v\mu \frac{\partial f}{\partial s} - v(1-\mu^2)\frac{\partial \ln(\sqrt{B})}{\pa
 \end{align*}
 $$
 
-\noindent
+ 
 The bracketed term simplifies to
 
 $$\begin{equation*}
@@ -61,7 +62,7 @@ $$\begin{equation*}
 \end{equation*}
 $$
 
-\noindent
+ 
 So we obtain:
 
 $$
@@ -70,7 +71,7 @@ v\mu \frac{\partial f}{\partial s} - v(1-\mu^2)\frac{\partial \ln(\sqrt{B})}{\pa
 \end{equation}
 $$
 
-\noindent
+ 
 To account for the focusing term, we define a new distribution function $g = Bf$. And express the derivatives of $f$ in terms of $g$:
 
 $$\begin{align*}
@@ -86,7 +87,7 @@ $$\begin{align*}
 \end{align*}
 $$
 
-\noindent
+ 
 Recall that $\frac{\partial \ln(\sqrt{B})}{\partial s} =\frac{1}{2B}\frac{\partial B}{\partial s}$. Substituting this:
 
 $$\begin{align*}
@@ -94,14 +95,14 @@ $$\begin{align*}
 \end{align*}
 $$
 
-\noindent
+ 
 Group terms with $\frac{\partial \ln(\sqrt{B})}{\partial s}$:
 
 $$
 \mu \frac{\partial g}{\partial s} - \frac{\partial \ln(\sqrt{B})}{\partial s} \left[ 2\mu g + (1-\mu^2)\frac{\partial g}{\partial \mu} - g \frac{3\mu^2 - 1}{\mu} \right] = 0
 $$
 
-\noindent
+ 
 Again the bracketed term simplifies to:
 
 $$
@@ -115,7 +116,7 @@ $$
 \end{align*}
 $$
 
-\noindent
+ 
 the differential equation for $g$ is:
 
 $$\begin{equation*}
@@ -123,7 +124,7 @@ $$\begin{equation*}
 \end{equation*}
 $$
 
-\noindent
+ 
 Let's now substitute $\psi = \mu g$ into the equation for $g$. And we note, that we are working on phase space, such that partial derivatives between phase space coordinates are taken considering other coordinates constant. In Thermodynamics this is made obvious by using the notation $\left(\frac{\partial U}{\partial T} \right)_{N,P}$, which means \textit{the partial derivative of the internal energy, holding $N, P$ as constants},
 
 $$    \mu \frac{\partial g}{\partial s} = \mu \frac{\partial}{\partial s}\left(\frac{\psi}{\mu}\right) = \mu \left( \frac{1}{\mu} \frac{\partial \psi}{\partial s} \right) = \frac{\partial \psi}{\partial s}
@@ -173,7 +174,7 @@ $$
 
 It must be pointed, that equation \eqref{fluxequation} can be used as long as no substantial energy losses occur as a result of scattering of CRs. This is, as long as the diffusion term in the equations remains negligible\cite{Morfill1976}. Energy losses are a result of small instant reductions caused by individual collisions with gas particles, subsequently causing the Larmor radius to decrease. 
 
-\noindent
+ 
 We also point out that the relation between $j(\mu,s,E)$ and the number of particles per unit volume and unit energy is,
 
 $$
