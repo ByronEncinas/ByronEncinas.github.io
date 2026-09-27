@@ -7,11 +7,9 @@ permalink: /tagebuch/dkpt1/
 
 # Der Kleine Prinz
 
-Mit Zeichnung des Verfassers
+Mit Zeichnung des <mark>Verfassers</mark>
 
 ## Erste Teil
-
-
 
 ## Glossar
 **Verfassers**: Autor
