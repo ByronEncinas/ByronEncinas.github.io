@@ -7,3 +7,8 @@ kramdown:
   input: GFM
   math_engine: mathjax
   math_engine_opts: {}
+
+collections:
+  tagebuch:
+    output: true
+    permalink: /tagebuch/:path/
