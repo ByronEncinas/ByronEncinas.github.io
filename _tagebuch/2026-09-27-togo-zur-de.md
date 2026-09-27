@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Der Kleine Prinz Teil 1
+title: Togo zur DE
 date: 2026-09-27
 permalink: /tagebuch/baruc/
 ---
