@@ -9,4 +9,5 @@ I spent the first year of my masters degree studying what I could on theoretical
 
 In retrospect, the form of this integral, does not seem unsolvable. But it is also not trivial, and it is probably (one of) the first result(s) that make the Landau books difficult. 
 
-It is not my intention to solve the equation here, because I have noticed that the these books must be read carefully and each chapter gives you just enough tools to derive everything by yourself. So I will end this post with a simple hint. Do you know what a [Beta Function](https://en.wikipedia.org/wiki/Beta_function)?
+It is not my intention to solve the equation here, because I have noticed that the these books must be read carefully and each chapter gives you just enough tools to derive everything by yourself. So I will end this post with a simple hint. Do you know what a [Beta Function](https://en.wikipedia.org/wiki/Beta_function) is?
+
