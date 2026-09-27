@@ -2,15 +2,25 @@
 layout: default
 title: Der Kleine Prinz Teil 1
 date: 2026-09-27
-permalink: /tagebuch/dkpt1/
+permalink: /tagebuch/baruc/
 ---
 
-# Der Kleine Prinz
+# Vom Togo zur Deutschland (Sin terminar)
 
-Mit Zeichnung des <mark>Verfassers</mark>
+A von Z zum Deutsch
 
-## Erste Teil
+<mark>trotzdem</mark>
+
+vor 4 jahre hat Deutschlernen?
+
+Püntlichkeit, XD nur gute dinge von Deutschland
+
+<mark>Heimat?</mark>
+
+Quelle: [Mein Leben in Deutschland🇩🇪: vom Traum zur Realität](https://www.youtube.com/watch?v=VhLpxKOsMEc)
+
+Ich verstehe dieses Video nicht. 
 
 ## Glossar
-**Verfassers**: Autor
-**des**: en español, se usa para apuntar a una propiedad i.e. _del Autor_
+**Heimat**: Hogar/Home
+**Trotzdem**: Nevertheless/de todos modos
