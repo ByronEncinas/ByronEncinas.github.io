@@ -5,7 +5,14 @@ date: 2026-09-27
 permalink: /tagebuch/dkpt1/
 ---
 
-# Untertitel
+# Der Kleine Prinz
+
+Mit Zeichnung des Verfassers
+
+## Erste Teil
+
+
 
 ## Glossar
-
+**Verfassers**: Autor
+**des**: en español, se usa para apuntar a una propiedad i.e. _del Autor_
