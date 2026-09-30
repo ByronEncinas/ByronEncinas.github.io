@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Herr Antrim Advice
-date: 2026-09-26
+date: 2026-09-29
 permalink: /tagebuch/herrantrim/
 ---
 
