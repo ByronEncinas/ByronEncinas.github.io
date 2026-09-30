@@ -22,5 +22,6 @@ Quelle: [Mein Leben in Deutschland🇩🇪: vom Traum zur Realität](https://www
 Ich verstehe dieses Video nicht. 
 
 ## Glossar
-**Heimat**: Hogar/Home
-**Trotzdem**: Nevertheless/de todos modos
+
+- **Heimat**: Hogar/Home
+- **Trotzdem**: Nevertheless/de todos modos
